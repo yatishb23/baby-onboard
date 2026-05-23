@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { GenerateKeyButton } from "@/components/GenerateKeyButton";
 import { DownloadButton } from "@/components/DownloadButton";
-import { Download, Check } from "lucide-react";
+import { Download, Check, Clock } from "lucide-react";
 
 export default function DownloadPage() {
   return (
@@ -58,12 +58,12 @@ export default function DownloadPage() {
               <Check className="h-3.5 w-3.5 text-green-500" /> Windows
             </span>
             <span className="text-gray-300">|</span>
-            <span className="flex items-center gap-1.5 text-gray-700">
-              <Check className="h-3.5 w-3.5 text-green-500" /> macOS
+            <span className="flex items-center gap-1.5 text-gray-500">
+              <Clock className="h-3.5 w-3.5" /> macOS
             </span>
             <span className="text-gray-300">|</span>
-            <span className="flex items-center gap-1.5 text-gray-700">
-              <Check className="h-3.5 w-3.5 text-green-500" /> Linux
+            <span className="flex items-center gap-1.5 text-gray-500">
+              <Clock className="h-3.5 w-3.5" /> Linux
             </span>
             <span className="text-gray-300">|</span>
             <span className="text-gray-700">Size: 25MB</span>

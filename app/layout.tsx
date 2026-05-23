@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: "BOB Stealth Pilot — Interview Co-Pilot",
   description:
     "BOB listens, analyzes, and feeds you the perfect answers in real-time. Zero detection. Maximum confidence.",
+  icons: { icon: "/bob.png" },
 };
 
 export default function RootLayout({
