@@ -4,6 +4,7 @@ export async function GET(request: NextRequest) {
   return NextResponse.json({
     default_model: "gemini-3-flash-preview",
     models: [
+      "gemini-3-flash-preview",
       "gemini-3.1-flash-lite-preview",
       "gemini-3.1-flash-lite",
       "gemini-2.5-flash",
