@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white px-8 py-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 px-8 py-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
         {number}
       </div>

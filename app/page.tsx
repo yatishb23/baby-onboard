@@ -25,8 +25,8 @@ function StepCard({
   desc: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="mb-3 inline-block rounded-lg bg-gray-900 px-3 py-1 font-mono text-sm font-bold text-white">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
+      <div className="mb-3 inline-block rounded-lg bg-zinc-800 px-3 py-1 font-mono text-sm font-bold text-zinc-200">
         {num}
       </div>
       <h3 className="text-xl font-bold text-gray-900">{title}</h3>
@@ -46,9 +46,9 @@ function FeatureCard({
   desc: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
           <Icon className="h-6 w-6 text-white" />
         </div>
         <div className="rounded-md bg-gray-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-gray-600">
@@ -66,7 +66,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* NAV */}
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-gray-100">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-2xl font-bold tracking-tight text-gray-900">
@@ -91,7 +91,7 @@ export default function Home() {
             </Link>
             <Link
               href="/download"
-              className="rounded-lg bg-gray-900 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-all hover:bg-gray-800"
+              className="rounded-lg bg-zinc-200 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-900 transition-all hover:bg-zinc-300"
             >
               Download
             </Link>
@@ -131,7 +131,7 @@ export default function Home() {
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/download"
-                  className="group inline-flex items-center justify-center gap-3 rounded-xl bg-gray-900 px-10 py-4 text-lg font-bold uppercase tracking-wide text-white shadow-sm transition-all hover:bg-gray-800"
+                  className="group inline-flex items-center justify-center gap-3 rounded-xl bg-zinc-200 px-10 py-4 text-lg font-bold uppercase tracking-wide text-zinc-900 shadow-sm transition-all hover:bg-zinc-300"
                 >
                   <Download className="h-5 w-5" />
                   Download Now
@@ -139,7 +139,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/how-it-works"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-white px-8 py-4 font-medium uppercase tracking-wide text-gray-700 shadow-sm transition-all hover:bg-gray-50"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-gray-100 px-8 py-4 font-medium uppercase tracking-wide text-gray-700 shadow-sm transition-all hover:bg-gray-200"
                 >
                   See How It Works
                   <ChevronRight className="h-4 w-4" />
@@ -150,15 +150,15 @@ export default function Home() {
             {/* Right — Decorative */}
             <div className="relative flex items-center justify-center lg:col-span-2">
               <div className="absolute -right-4 top-0 h-24 w-24 rounded-lg bg-gray-200" />
-              <div className="relative rounded-2xl border border-gray-200 bg-white p-4 shadow-md">
-                <div className="rounded-xl bg-gray-900 px-6 py-8 text-center">
+              <div className="relative rounded-2xl border border-gray-200 bg-gray-100 p-4 shadow-md">
+                <div className="rounded-xl bg-zinc-950 px-6 py-8 text-center">
                   <div
                     className="font-serif italic text-5xl font-bold text-white"
                     style={{ lineHeight: 0.9 }}
                   >
                     BOB
                   </div>
-                  <div className="mx-auto mt-2 h-px w-16 bg-white/20" />
+                  <div className="mx-auto mt-2 h-px w-16 bg-gray-100/20" />
                   <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.25em] text-white/50">
                     Stealth Pilot
                   </div>
@@ -184,8 +184,8 @@ export default function Home() {
       {/* HOW IT WORKS */}
       <section id="how-it-works" className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-12 inline-block rounded-xl bg-gray-900 px-6 py-3 shadow-sm">
-            <h2 className="text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
+          <div className="mb-12 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
+            <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
               How It Works
             </h2>
           </div>
@@ -209,36 +209,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PULL QUOTE */}
-      <section className="border-b border-gray-200 bg-gray-100">
-        <div className="mx-auto max-w-5xl px-6 py-16 text-center lg:py-20">
-          <div className="inline-block rounded-lg bg-white px-4 py-2 text-xs font-semibold uppercase tracking-widest shadow-sm mb-6">
-            Trusted by Students
-          </div>
-          <blockquote className="relative">
-            <Quote className="absolute -left-4 -top-8 h-12 w-12 text-gray-300" />
-            <p className="font-serif text-2xl font-bold italic leading-snug text-gray-900 sm:text-3xl lg:text-4xl">
-              &ldquo;I got the offer. BOB is the reason. It&rsquo;s that
-              simple.&rdquo;
-            </p>
-          </blockquote>
-          <div className="mt-8 flex items-center justify-center gap-4">
-            <div className="h-px w-8 bg-gray-300" />
-            <span className="text-sm font-medium uppercase tracking-wider text-gray-500">
-              Sarah K., Software Engineering @ Google
-            </span>
-            <div className="h-px w-8 bg-gray-300" />
-          </div>
-        </div>
-      </section>
-
       {/* REVIEWS */}
       <ReviewsSection />
 
       {/* FEATURES */}
       <section id="features" className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-12 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+          <div className="mb-12 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900 sm:text-3xl">
               Why BOB?
             </h2>
@@ -270,9 +247,9 @@ export default function Home() {
             ].map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-6 py-4 shadow-sm"
+                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-100 px-6 py-4 shadow-sm"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                   <Icon className="h-5 w-5 text-white" />
                 </div>
                 <span className="font-semibold text-sm text-gray-900">
@@ -287,7 +264,7 @@ export default function Home() {
       {/* EXPLORE MORE */}
       <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-5xl px-6 py-16 text-center lg:py-20">
-          <div className="inline-block rounded-lg bg-white px-5 py-2 shadow-sm text-xs font-semibold uppercase tracking-widest mb-6">
+          <div className="inline-block rounded-lg bg-gray-200 px-5 py-2 shadow-sm text-xs font-semibold uppercase tracking-widest mb-6">
             v2.0.1 Now Available
           </div>
 
@@ -305,7 +282,7 @@ export default function Home() {
           <div className="mt-12 flex justify-center">
             <Link
               href="/download"
-              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-white px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
             >
               <Download className="h-7 w-7" />
               Get BOB Now
@@ -315,7 +292,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-gray-900 py-10">
+      <footer className="border-t border-gray-200 bg-zinc-950 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-xl font-bold tracking-tight text-white">

@@ -30,9 +30,9 @@ function SectionCard({
   children: React.ReactNode;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
           <Icon className="h-6 w-6 text-white" />
         </div>
         <h3 className="text-xl font-bold text-gray-900">{title}</h3>
@@ -63,8 +63,8 @@ function SettingRow({ setting, options }: { setting: string; options: string }) 
 
 function TipCard({ icon: Icon, text }: { icon: typeof Lightbulb; text: string }) {
   return (
-    <div className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
-      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-900">
+    <div className="flex items-start gap-4 rounded-xl border border-gray-200 bg-gray-100 p-5 shadow-sm">
+      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-zinc-800">
         <Icon className="h-5 w-5 text-white" />
       </div>
       <p className="text-sm font-medium text-gray-700 leading-relaxed">{text}</p>
@@ -76,7 +76,7 @@ export default function Manual() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* NAV */}
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-gray-100">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-2xl font-bold tracking-tight text-gray-900">
@@ -97,17 +97,11 @@ export default function Manual() {
               href="/features"
               className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
             >
-              Features
-            </Link>
-            <Link
-              href="/manual"
-              className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-900 transition-colors"
-            >
               User Manual
             </Link>
             <Link
               href="/download"
-              className="rounded-lg bg-gray-900 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-all hover:bg-gray-800"
+              className="rounded-lg bg-zinc-200 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-900 transition-all hover:bg-zinc-300"
             >
               Download
             </Link>
@@ -146,8 +140,8 @@ export default function Manual() {
       {/* TABLE OF CONTENTS */}
       <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl bg-gray-900 px-6 py-3 shadow-sm">
-            <h2 className="text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
+          <div className="mb-10 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
+            <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
               Table of Contents
             </h2>
           </div>
@@ -163,9 +157,9 @@ export default function Manual() {
             ].map(({ num, label }) => (
               <div
                 key={num}
-                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-sm transition-shadow hover:shadow-md"
+                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-100 px-5 py-4 shadow-sm transition-shadow hover:shadow-md"
               >
-                <div className="rounded-lg bg-gray-100 px-3 py-1 font-mono text-sm font-bold text-gray-700">
+                <div className="rounded-lg bg-gray-200 px-3 py-1 font-mono text-sm font-bold text-gray-700">
                   {num}
                 </div>
                 <span className="font-semibold text-sm text-gray-900">
@@ -180,7 +174,7 @@ export default function Manual() {
       {/* 01 — FIRST-TIME SETUP */}
       <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
               01. First-Time <span className="font-serif italic font-normal">Setup</span>
             </h2>
@@ -207,7 +201,7 @@ export default function Manual() {
               </p>
             </SectionCard>
           </div>
-          <div className="mt-8 rounded-xl border border-gray-200 bg-gray-100 px-6 py-4 text-center">
+          <div className="mt-8 rounded-xl border border-gray-200 bg-gray-200 px-6 py-4 text-center">
             <p className="text-sm font-medium text-gray-600">
               <strong>Heads up:</strong> On subsequent launches, your session is
               restored automatically (valid for 30 days).
@@ -221,7 +215,7 @@ export default function Manual() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <div className="mb-6 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+              <div className="mb-6 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
                 <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
                   02. Overlay <span className="font-serif italic font-normal">Window</span>
                 </h2>
@@ -240,9 +234,9 @@ export default function Manual() {
                 ].map(({ icon: Icon, label, desc }) => (
                   <div
                     key={label}
-                    className="flex items-start gap-4 rounded-xl border border-gray-200 bg-white px-6 py-4 shadow-sm"
+                    className="flex items-start gap-4 rounded-xl border border-gray-200 bg-gray-200 px-6 py-4 shadow-sm"
                   >
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gray-900">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-zinc-800">
                       <Icon className="h-5 w-5 text-white" />
                     </div>
                     <div>
@@ -254,15 +248,15 @@ export default function Manual() {
               </div>
             </div>
             <div className="relative flex justify-center">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-md">
-                <div className="rounded-xl bg-gray-900 px-8 py-10 text-center">
+              <div className="rounded-2xl border border-gray-200 bg-gray-100 p-4 shadow-md">
+                <div className="rounded-xl bg-zinc-950 px-8 py-10 text-center">
                   <div
                     className="font-serif italic text-4xl font-bold text-white sm:text-5xl"
                     style={{ lineHeight: 0.9 }}
                   >
                     Bob.io
                   </div>
-                  <div className="mx-auto mt-4 h-px w-24 bg-white/20" />
+                  <div className="mx-auto mt-4 h-px w-24 bg-gray-100/20" />
                   <div className="mt-4 flex items-center justify-center gap-4">
                     <span className="text-[10px] font-medium uppercase tracking-wider text-white/40">
                       Gemini Flash
@@ -289,7 +283,7 @@ export default function Manual() {
       {/* 03 — KEYBOARD SHORTCUTS */}
       <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
               03. Keyboard <span className="font-serif italic font-normal">Shortcuts</span>
             </h2>
@@ -299,9 +293,9 @@ export default function Manual() {
             doesn&apos;t have focus.
           </p>
           <div className="grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                   <Monitor className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900">Window &amp; Display</h3>
@@ -314,9 +308,9 @@ export default function Manual() {
                 <ShortcutRow keys="Ctrl+= / Ctrl+-" action="Resize window larger / smaller" />
               </div>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                   <Brain className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900">AI &amp; Analysis</h3>
@@ -328,9 +322,9 @@ export default function Manual() {
                 <ShortcutRow keys="Ctrl+Shift+E" action="Erase conversation history" />
               </div>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm lg:col-span-2">
+            <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm lg:col-span-2">
               <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                   <ArrowUpDown className="h-5 w-5 text-white" />
                 </div>
                 <h3 className="font-bold text-gray-900">Navigation</h3>
@@ -348,20 +342,20 @@ export default function Manual() {
       {/* 04 — FEATURES */}
       <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl bg-gray-900 px-6 py-3 shadow-sm">
-            <h2 className="text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
+          <div className="mb-10 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
+            <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
               04. Features
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             <SectionCard icon={Image} title="Screenshot Analysis">
               <p className="mb-4 text-gray-600 leading-relaxed">
-                Press <kbd className="rounded bg-gray-100 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+H</kbd>{" "}
+                Press <kbd className="rounded bg-gray-200 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+H</kbd>{" "}
                 to capture your primary display. The image is compressed and sent
                 to Gemini AI for analysis. Results stream in real-time with
                 markdown rendering and syntax-highlighted code blocks.
               </p>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <div className="rounded-lg border border-gray-200 bg-gray-200 px-4 py-3">
                 <p className="text-xs font-medium text-gray-500">
                   <strong>Pro tip:</strong> The AI considers your configured
                   preferences (language, frameworks, answer style) when generating
@@ -371,12 +365,12 @@ export default function Manual() {
             </SectionCard>
             <SectionCard icon={Mic} title="Voice Recording">
               <p className="mb-4 text-gray-600 leading-relaxed">
-                Press <kbd className="rounded bg-gray-100 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+R</kbd>{" "}
+                Press <kbd className="rounded bg-gray-200 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+R</kbd>{" "}
                 to start a voice session. The app connects to Gemini Live Audio
                 API, streams your mic input in real-time, transcribes speech (with
                 speaker diarization), and the AI responds with audio and text.
               </p>
-              <div className="rounded-lg border border-gray-200 bg-gray-50 px-4 py-3">
+              <div className="rounded-lg border border-gray-200 bg-gray-200 px-4 py-3">
                 <p className="text-xs font-medium text-gray-500">
                   A pulsing <strong>&quot;LIVE&quot;</strong> indicator in the
                   header shows when recording is active. Press the same shortcut
@@ -389,7 +383,7 @@ export default function Manual() {
                 Send text messages to the AI for general Q&amp;A, coding help, or
                 problem-solving. Conversation history is maintained for context.
                 Press{" "}
-                <kbd className="rounded bg-gray-100 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+E</kbd>{" "}
+                <kbd className="rounded bg-gray-200 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+E</kbd>{" "}
                 to clear history.
               </p>
             </SectionCard>
@@ -405,7 +399,7 @@ export default function Manual() {
             <SectionCard icon={PanelRight} title="Notes Panel">
               <p className="text-gray-600 leading-relaxed">
                 Press{" "}
-                <kbd className="rounded bg-gray-100 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+B</kbd>{" "}
+                <kbd className="rounded bg-gray-200 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+B</kbd>{" "}
                 to toggle the Notes panel. Paste or type your own notes, or use
                 AI-generated Interview Q&amp;A content that is auto-split into
                 sections.
@@ -414,7 +408,7 @@ export default function Manual() {
             <SectionCard icon={List} title="Model Selection">
               <p className="text-gray-600 leading-relaxed">
                 Press{" "}
-                <kbd className="rounded bg-gray-100 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+M</kbd>{" "}
+                <kbd className="rounded bg-gray-200 px-2 py-0.5 font-mono text-xs font-bold">Ctrl+Shift+M</kbd>{" "}
                 to cycle through available AI models. Models are fetched from the
                 server (with a local fallback list). The current model is shown
                 in the header bar.
@@ -427,7 +421,7 @@ export default function Manual() {
       {/* 05 — CONFIGURATION */}
       <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
               05. <span className="font-serif italic font-normal">Configuration</span>
             </h2>
@@ -437,7 +431,7 @@ export default function Manual() {
             and take effect on launch. Configured in the Setup Window.
           </p>
           <div className="mx-auto max-w-3xl">
-            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-xl border border-gray-200 bg-gray-100 p-8 shadow-sm">
               <SettingRow setting="DSA/CP Language" options="Java, C++, Python, or custom" />
               <SettingRow setting="Frontend Framework" options="React, Next.js, or custom" />
               <SettingRow setting="Backend Framework" options="Node.js, Spring Boot, or custom" />
@@ -461,7 +455,7 @@ export default function Manual() {
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <div className="mb-6 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+              <div className="mb-6 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
                 <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
                   06. Click-Through <span className="font-serif italic font-normal">Mode</span>
                 </h2>
@@ -481,7 +475,7 @@ export default function Manual() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 rounded-xl border border-gray-200 bg-gray-100 px-6 py-4">
+              <div className="mt-6 rounded-xl border border-gray-200 bg-gray-200 px-6 py-4">
                 <p className="text-sm font-medium text-gray-600">
                   A <strong>&quot;Click-through&quot;</strong> badge in the header
                   shows the current state.
@@ -489,15 +483,15 @@ export default function Manual() {
               </div>
             </div>
             <div className="relative flex justify-center">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-md">
-                <div className="rounded-xl bg-gray-900 px-8 py-10 text-center">
+              <div className="rounded-2xl border border-gray-200 bg-gray-100 p-4 shadow-md">
+                <div className="rounded-xl bg-zinc-950 px-8 py-10 text-center">
                   <div className="flex items-center justify-center gap-3">
                     <MousePointer2 className="h-8 w-8 text-white/50" />
                     <span className="font-mono text-xs font-medium uppercase tracking-wider text-white/40">
                       Click-through: ON
                     </span>
                   </div>
-                  <div className="mx-auto mt-6 h-px w-24 bg-white/20" />
+                  <div className="mx-auto mt-6 h-px w-24 bg-gray-100/20" />
                   <div className="mt-4 space-y-2 text-left">
                     <div className="rounded border border-white/20 px-4 py-2">
                       <span className="text-xs font-medium text-green-400">
@@ -520,7 +514,7 @@ export default function Manual() {
       {/* 07 — TIPS */}
       <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+          <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
               07. Quick <span className="font-serif italic font-normal">Tips</span>
             </h2>
@@ -566,7 +560,7 @@ export default function Manual() {
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
               href="/download"
-              className="group inline-flex items-center gap-4 rounded-2xl border border-gray-300 bg-white px-12 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
+              className="group inline-flex items-center gap-4 rounded-2xl border border-gray-300 bg-gray-200 px-12 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
             >
               <Download className="h-7 w-7" />
               Download Now
@@ -574,7 +568,7 @@ export default function Manual() {
             </Link>
             <Link
               href="/features"
-              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-white px-8 py-4 font-medium uppercase tracking-wide text-gray-700 shadow-sm transition-all hover:bg-gray-50"
+              className="inline-flex items-center gap-2 rounded-xl border border-gray-300 bg-gray-200 px-8 py-4 font-medium uppercase tracking-wide text-gray-700 shadow-sm transition-all hover:bg-gray-200"
             >
               View Features
               <ChevronRight className="h-4 w-4" />
@@ -584,7 +578,7 @@ export default function Manual() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-gray-900 py-10">
+      <footer className="border-t border-gray-200 bg-zinc-950 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-xl font-bold tracking-tight text-white">

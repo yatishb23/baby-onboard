@@ -46,9 +46,9 @@ export function GenerateKeyButton() {
   };
 
   return (
-    <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="mt-8 rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
           <Key className="h-6 w-6 text-white" />
         </div>
         <h3 className="text-xl font-bold text-gray-900">
@@ -60,19 +60,19 @@ export function GenerateKeyButton() {
         <button
           onClick={generateToken}
           disabled={loading}
-          className="rounded-lg bg-gray-900 px-6 py-3 font-semibold uppercase tracking-widest text-white transition-all hover:bg-gray-800 active:translate-y-px disabled:opacity-50"
+          className="rounded-lg bg-zinc-200 px-6 py-3 font-semibold uppercase tracking-widest text-zinc-900 transition-all hover:bg-zinc-300 active:translate-y-px disabled:opacity-50"
         >
           {loading ? "Generating..." : "Generate Access Key"}
         </button>
       ) : (
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="flex-1 rounded-lg bg-gray-50 p-4 border border-gray-200 font-mono text-sm break-all flex items-center justify-between">
+            <div className="flex-1 rounded-lg bg-gray-200 p-4 border border-gray-200 font-mono text-sm break-all flex items-center justify-between">
               <span>{showKey ? token : token.replace(/./g, "•")}</span>
             </div>
             <button
               onClick={() => setShowKey(!showKey)}
-              className="rounded-lg p-4 border border-gray-200 bg-white hover:bg-gray-50 transition-colors"
+              className="rounded-lg p-4 border border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors"
               title={showKey ? "Hide Key" : "Show Key"}
             >
               {showKey ? (
@@ -83,13 +83,13 @@ export function GenerateKeyButton() {
             </button>
             <button
               onClick={copyToClipboard}
-              className="rounded-lg p-4 bg-gray-900 hover:bg-gray-800 transition-colors"
+              className="rounded-lg p-4 bg-zinc-200 text-zinc-900 hover:bg-zinc-300 transition-colors"
               title="Copy Key"
             >
               {copied ? (
-                <Check className="h-5 w-5 text-white" />
+                <Check className="h-5 w-5 text-zinc-900" />
               ) : (
-                <Copy className="h-5 w-5 text-white" />
+                <Copy className="h-5 w-5 text-zinc-900" />
               )}
             </button>
           </div>

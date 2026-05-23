@@ -84,15 +84,15 @@ export function ReviewsSection() {
   };
 
   return (
-    <section className="border-b border-gray-200 bg-white">
+    <section className="border-b border-gray-200 bg-gray-100">
       <div className="mx-auto max-w-5xl px-6 py-16 lg:py-20">
-        <div className="mb-12 inline-block rounded-xl bg-gray-900 px-6 py-3 shadow-sm">
-          <h2 className="text-2xl font-bold uppercase tracking-tight text-white sm:text-3xl">
+        <div className="mb-12 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
+          <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
             Reviews
           </h2>
         </div>
 
-        <div className="mb-12 flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-50 p-6">
+        <div className="mb-12 flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-200 p-6">
           <div className="text-5xl font-bold text-gray-900">{average.toFixed(1)}</div>
           <div>
             <StarRating value={Math.round(average)} />
@@ -105,7 +105,7 @@ export function ReviewsSection() {
             <p className="text-center text-gray-400">No reviews yet. Be the first!</p>
           )}
           {reviews.map((review) => (
-            <div key={review.id} className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm">
+            <div key={review.id} className="rounded-xl border border-gray-200 bg-gray-100 p-5 shadow-sm">
               <div className="flex items-center justify-between">
                 <span className="font-semibold text-gray-900">{review.name}</span>
                 <StarRating value={review.rating} />
@@ -116,7 +116,7 @@ export function ReviewsSection() {
           ))}
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-gray-50 p-6">
+        <div className="rounded-xl border border-gray-200 bg-gray-200 p-6">
           <h3 className="mb-4 text-lg font-bold text-gray-900">Leave a Review</h3>
           {submitted && (
             <p className="mb-4 rounded-lg bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
@@ -132,7 +132,7 @@ export function ReviewsSection() {
                 onChange={(e) => setName(e.target.value)}
                 required
                 maxLength={255}
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-900"
+                className="w-full rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-600"
                 placeholder="Your name"
               />
             </div>
@@ -147,14 +147,14 @@ export function ReviewsSection() {
                 onChange={(e) => setComment(e.target.value)}
                 required
                 rows={3}
-                className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-900 resize-none"
+                className="w-full rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-600 resize-none"
                 placeholder="Share your experience..."
               />
             </div>
             <button
               type="submit"
               disabled={submitting}
-              className="rounded-lg bg-gray-900 px-6 py-2 text-sm font-semibold uppercase tracking-wider text-white transition-all hover:bg-gray-800 disabled:opacity-50"
+              className="rounded-lg bg-zinc-200 px-6 py-2 text-sm font-semibold uppercase tracking-wider text-zinc-900 transition-all hover:bg-zinc-300 disabled:opacity-50"
             >
               {submitting ? "Submitting..." : "Submit Review"}
             </button>

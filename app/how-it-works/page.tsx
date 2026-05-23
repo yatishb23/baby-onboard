@@ -25,12 +25,12 @@ function StepCard({
   icon: typeof Monitor;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
           <Icon className="h-6 w-6 text-white" />
         </div>
-        <div className="rounded-lg bg-gray-100 px-3 py-1 font-mono text-sm font-bold text-gray-700">
+        <div className="rounded-lg bg-gray-200 px-3 py-1 font-mono text-sm font-bold text-gray-700">
           {num}
         </div>
       </div>
@@ -70,7 +70,7 @@ export default function HowItWorks() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* NAV */}
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-gray-100">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-2xl font-bold tracking-tight text-gray-900">
@@ -91,11 +91,11 @@ export default function HowItWorks() {
               href="/features"
               className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
             >
-              Features
+              User Manual
             </Link>
             <Link
               href="/#download"
-              className="rounded-lg bg-gray-900 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-all hover:bg-gray-800"
+              className="rounded-lg bg-zinc-200 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-900 transition-all hover:bg-zinc-300"
             >
               Download
             </Link>
@@ -200,9 +200,9 @@ export default function HowItWorks() {
                 ].map(({ icon: Icon, text }) => (
                   <div
                     key={text}
-                    className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-6 py-4 shadow-sm"
+                    className="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-200 px-6 py-4 shadow-sm"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                       <Icon className="h-5 w-5 text-white" />
                     </div>
                     <span className="font-medium text-sm text-gray-700">{text}</span>
@@ -211,15 +211,15 @@ export default function HowItWorks() {
               </div>
             </div>
             <div className="relative flex justify-center">
-              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-md">
-                <div className="rounded-xl bg-gray-900 px-8 py-10 text-center">
+              <div className="rounded-2xl border border-gray-200 bg-gray-100 p-4 shadow-md">
+                <div className="rounded-xl bg-zinc-950 px-8 py-10 text-center">
                   <div
                     className="font-serif italic text-4xl font-bold text-white sm:text-5xl"
                     style={{ lineHeight: 0.9 }}
                   >
                     Q &amp; A
                   </div>
-                  <div className="mx-auto mt-4 h-px w-24 bg-white/20" />
+                  <div className="mx-auto mt-4 h-px w-24 bg-gray-100/20" />
                   <div className="mt-4 space-y-3 text-left">
                     {[
                       { q: "Question", s: "analyzing..." },
@@ -249,12 +249,12 @@ export default function HowItWorks() {
       <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="mx-auto max-w-2xl">
-            <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+            <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
               <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
                 System <span className="font-serif italic font-normal">requirements</span>
               </h2>
             </div>
-            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
+            <div className="rounded-xl border border-gray-200 bg-gray-100 p-8 shadow-sm">
               <SpecRow label="OS" value="Windows 10+ / macOS 12+ / Linux" />
               <SpecRow label="RAM" value="4GB minimum" />
               <SpecRow label="Storage" value="200MB available" />
@@ -281,7 +281,7 @@ export default function HowItWorks() {
           <div className="mt-10">
             <Link
               href="/#download"
-              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-white px-12 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-12 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
             >
               <Download className="h-7 w-7" />
               Install BOB Now
@@ -292,7 +292,7 @@ export default function HowItWorks() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-gray-900 py-10">
+      <footer className="border-t border-gray-200 bg-zinc-950 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
           <Link href="/" className="flex items-baseline gap-3">
             <span className="text-xl font-bold tracking-tight text-white">

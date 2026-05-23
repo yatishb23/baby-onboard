@@ -5,20 +5,32 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-bg-paper: #ffffff;
-  --color-yellow-bright: #f5f5f5;
-  --color-green-accent: #f0f0f0;
+  --color-gray-50: #09090b;
+  --color-gray-100: #18181b;
+  --color-gray-200: #27272a;
+  --color-gray-300: #3f3f46;
+  --color-gray-400: #71717a;
+  --color-gray-500: #a1a1aa;
+  --color-gray-600: #d4d4d8;
+  --color-gray-700: #e4e4e7;
+  --color-gray-800: #f4f4f5;
+  --color-gray-900: #fafafa;
+  --color-gray-950: #ffffff;
+
+  --color-bg-paper: #18181b;
+  --color-yellow-bright: #27272a;
+  --color-green-accent: #27272a;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --border: #e5e5e5;
+  --background: #09090b;
+  --foreground: #fafafa;
+  --border: #27272a;
 }
 
 @layer base {
   * {
-    border-color: #e5e5e5;
+    border-color: #27272a;
   }
   body {
     background-color: var(--background);

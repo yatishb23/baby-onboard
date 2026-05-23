@@ -37,7 +37,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
     >
-      <body className="bg-white font-sans text-gray-900 antialiased">
+      <body className="bg-gray-50 font-sans text-gray-900 antialiased">
         <Analytics/>
         <VisitTracker />
         {children}

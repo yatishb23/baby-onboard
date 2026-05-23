@@ -14,7 +14,7 @@ export function DownloadButton() {
   return (
     <button
       onClick={handleClick}
-      className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-white px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
+      className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
     >
       <Download className="h-7 w-7" />
       Install BOB Now
