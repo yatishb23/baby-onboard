@@ -86,7 +86,7 @@ export default function Home() {
               href="/features"
               className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
             >
-              Features
+              User Manual
             </Link>
             <Link
               href="/download"
