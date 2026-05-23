@@ -17,37 +17,30 @@ function StepCard({
   desc,
   details,
   icon: Icon,
-  color,
 }: {
   num: string;
   title: string;
   desc: string;
   details: string[];
   icon: typeof Monitor;
-  color: string;
 }) {
   return (
-    <div className="group border-4 border-black bg-white p-6 shadow-hard transition-all hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_#000]">
+    <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-start justify-between">
-        <div className="flex h-12 w-12 items-center justify-center border-4 border-black bg-black">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
           <Icon className="h-6 w-6 text-white" />
         </div>
-        <div
-          className="border-4 border-black px-3 py-1 font-mono text-xl font-black"
-          style={{ backgroundColor: color }}
-        >
+        <div className="rounded-lg bg-gray-100 px-3 py-1 font-mono text-sm font-bold text-gray-700">
           {num}
         </div>
       </div>
-      <h3 className="text-xl font-black uppercase tracking-tight">
-        {title}
-      </h3>
-      <div className="my-4 h-[3px] w-full bg-black" />
-      <p className="mb-6 font-medium leading-relaxed text-black/70">{desc}</p>
-      <ul className="space-y-2 border-t-4 border-black pt-4">
+      <h3 className="text-xl font-bold text-gray-900">{title}</h3>
+      <div className="my-4 h-px w-full bg-gray-200" />
+      <p className="mb-6 text-gray-600 leading-relaxed">{desc}</p>
+      <ul className="space-y-2 border-t border-gray-200 pt-4">
         {details.map((detail) => (
-          <li key={detail} className="flex items-start gap-3 text-sm font-bold">
-            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-black/60" />
+          <li key={detail} className="flex items-start gap-3 text-sm font-medium text-gray-600">
+            <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gray-400" />
             <span>{detail}</span>
           </li>
         ))}
@@ -64,52 +57,52 @@ function SpecRow({
   value: string;
 }) {
   return (
-    <div className="flex items-baseline justify-between gap-4 border-b-4 border-black py-3">
-      <span className="text-xs font-bold uppercase tracking-wider text-black/50">
+    <div className="flex items-baseline justify-between gap-4 border-b border-gray-200 py-3">
+      <span className="text-xs font-medium uppercase tracking-wider text-gray-400">
         {label}
       </span>
-      <span className="text-right font-bold">{value}</span>
+      <span className="text-right font-medium text-gray-900">{value}</span>
     </div>
   );
 }
 
 export default function HowItWorks() {
   return (
-    <div className="bg-dot-grid min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       {/* NAV */}
-      <header className="sticky top-0 z-50 border-b-4 border-black bg-black">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-baseline gap-3">
-            <span className="text-2xl font-black tracking-tighter text-white">
+            <span className="text-2xl font-bold tracking-tight text-gray-900">
               BOB
             </span>
-            <span className="hidden text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 sm:block">
+            <span className="hidden text-[10px] font-medium uppercase tracking-[0.25em] text-gray-400 sm:block">
               Stealth Pilot
             </span>
           </Link>
           <nav className="hidden items-center gap-8 md:flex">
             <Link
               href="/how-it-works"
-              className="text-[11px] font-bold uppercase tracking-[0.15em] text-white transition-colors"
+              className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-900 transition-colors"
             >
               How It Works
             </Link>
             <Link
               href="/features"
-              className="text-[11px] font-bold uppercase tracking-[0.15em] text-white/70 transition-colors hover:text-white"
+              className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
             >
               Features
             </Link>
             <Link
               href="/#download"
-              className="border-4 border-white bg-white px-5 py-2 text-[11px] font-black uppercase tracking-[0.1em] text-black transition-all hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_#000]"
+              className="rounded-lg bg-gray-900 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-white transition-all hover:bg-gray-800"
             >
               Download
             </Link>
           </nav>
           <Link
             href="/#download"
-            className="border-4 border-white px-4 py-2 text-[11px] font-black uppercase tracking-[0.1em] text-white md:hidden"
+            className="rounded-lg border border-gray-300 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-gray-700 md:hidden"
           >
             Download
           </Link>
@@ -117,19 +110,19 @@ export default function HowItWorks() {
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden border-b-4 border-black">
+      <section className="relative overflow-hidden border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-8 inline-block border-4 border-black bg-green-accent px-6 py-3 shadow-hard text-xs font-black uppercase tracking-widest">
+            <div className="mb-8 inline-block rounded-xl bg-gray-100 px-6 py-3 shadow-sm text-xs font-semibold uppercase tracking-widest text-gray-700">
               Three Simple Steps
             </div>
-            <h1 className="text-5xl font-black leading-[0.95] tracking-tighter sm:text-6xl lg:text-7xl">
+            <h1 className="text-5xl font-bold leading-[0.95] tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
               <span className="block">How it</span>
               <span className="font-serif italic font-normal text-6xl sm:text-7xl lg:text-8xl">
                 works
               </span>
             </h1>
-            <p className="mx-auto mt-8 max-w-xl text-lg font-medium leading-relaxed text-black/70">
+            <p className="mx-auto mt-8 max-w-xl text-lg text-gray-600 leading-relaxed">
               From download to live in under 60 seconds. No accounts, no
               configuration, no headaches.
             </p>
@@ -138,7 +131,7 @@ export default function HowItWorks() {
       </section>
 
       {/* STEPS */}
-      <section className="border-b-4 border-black">
+      <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid gap-6 md:grid-cols-3">
             <StepCard
@@ -152,7 +145,6 @@ export default function HowItWorks() {
                 "No admin rights needed",
               ]}
               icon={Download}
-              color="#C7F36B"
             />
             <StepCard
               num="02"
@@ -165,7 +157,6 @@ export default function HowItWorks() {
                 "Auto-starts with your system",
               ]}
               icon={Terminal}
-              color="#FFE600"
             />
             <StepCard
               num="03"
@@ -178,25 +169,24 @@ export default function HowItWorks() {
                 "Invisible to screen-sharing software",
               ]}
               icon={Zap}
-              color="#C7F36B"
             />
           </div>
         </div>
       </section>
 
       {/* VISUAL FLOW */}
-      <section className="border-b-4 border-black bg-yellow-bright">
+      <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative">
-              <div className="absolute -left-3 -top-3 h-12 w-12 border-4 border-black bg-green-accent" />
-              <h2 className="relative text-3xl font-black tracking-tighter sm:text-4xl">
+              <div className="absolute -left-3 -top-3 h-12 w-12 rounded-lg bg-gray-200" />
+              <h2 className="relative text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 <span className="block">What happens</span>
                 <span className="font-serif italic font-normal text-4xl sm:text-5xl lg:text-6xl">
                   under the hood
                 </span>
               </h2>
-              <p className="mt-8 text-lg font-medium leading-relaxed text-black/70">
+              <p className="mt-8 text-lg text-gray-600 leading-relaxed">
                 BOB uses advanced speech recognition and LLM processing to
                 analyze interview questions in real-time. It surfaces the most
                 relevant, tailored responses directly to your screen — all while
@@ -210,26 +200,26 @@ export default function HowItWorks() {
                 ].map(({ icon: Icon, text }) => (
                   <div
                     key={text}
-                    className="flex items-center gap-4 border-4 border-black bg-white px-6 py-4 shadow-hard"
+                    className="flex items-center gap-4 rounded-xl border border-gray-200 bg-white px-6 py-4 shadow-sm"
                   >
-                    <div className="flex h-10 w-10 items-center justify-center border-4 border-black bg-black">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gray-900">
                       <Icon className="h-5 w-5 text-white" />
                     </div>
-                    <span className="font-bold text-sm">{text}</span>
+                    <span className="font-medium text-sm text-gray-700">{text}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="relative flex justify-center">
-              <div className="border-8 border-black bg-white p-4 shadow-hard-xl -rotate-1 transition-all hover:rotate-0">
-                <div className="border-4 border-black bg-black px-8 py-10 text-center">
+              <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-md">
+                <div className="rounded-xl bg-gray-900 px-8 py-10 text-center">
                   <div
                     className="font-serif italic text-4xl font-bold text-white sm:text-5xl"
                     style={{ lineHeight: 0.9 }}
                   >
                     Q &amp; A
                   </div>
-                  <div className="mx-auto mt-4 h-[2px] w-24 bg-white/20" />
+                  <div className="mx-auto mt-4 h-px w-24 bg-white/20" />
                   <div className="mt-4 space-y-3 text-left">
                     {[
                       { q: "Question", s: "analyzing..." },
@@ -237,12 +227,12 @@ export default function HowItWorks() {
                     ].map(({ q, s }) => (
                       <div
                         key={q}
-                        className="flex items-center justify-between border-2 border-white/20 px-4 py-2"
+                        className="flex items-center justify-between rounded border border-white/20 px-4 py-2"
                       >
-                        <span className="text-xs font-bold uppercase tracking-wider text-white/50">
+                        <span className="text-xs font-medium uppercase tracking-wider text-white/50">
                           {q}
                         </span>
-                        <span className="text-xs font-bold text-green-accent">
+                        <span className="text-xs font-medium text-green-400">
                           {s}
                         </span>
                       </div>
@@ -256,15 +246,15 @@ export default function HowItWorks() {
       </section>
 
       {/* SYSTEM REQUIREMENTS */}
-      <section className="border-b-4 border-black">
+      <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="mx-auto max-w-2xl">
-            <div className="mb-10 inline-block border-4 border-black bg-white px-6 py-3 shadow-hard">
-              <h2 className="text-2xl font-black uppercase tracking-tighter">
+            <div className="mb-10 inline-block rounded-xl border border-gray-200 bg-white px-6 py-3 shadow-sm">
+              <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900">
                 System <span className="font-serif italic font-normal">requirements</span>
               </h2>
             </div>
-            <div className="border-4 border-black bg-white p-8 shadow-hard">
+            <div className="rounded-xl border border-gray-200 bg-white p-8 shadow-sm">
               <SpecRow label="OS" value="Windows 10+ / macOS 12+ / Linux" />
               <SpecRow label="RAM" value="4GB minimum" />
               <SpecRow label="Storage" value="200MB available" />
@@ -272,7 +262,7 @@ export default function HowItWorks() {
               <SpecRow label="Internet" value="Required for AI processing" />
               <SpecRow label="Download Size" value="25MB" />
             </div>
-            <p className="mt-6 text-sm font-bold text-black/50 text-center">
+            <p className="mt-6 text-sm font-medium text-gray-400 text-center">
               Most modern laptops and desktops meet these requirements.
             </p>
           </div>
@@ -280,18 +270,18 @@ export default function HowItWorks() {
       </section>
 
       {/* CTA */}
-      <section className="border-b-4 border-black bg-green-accent">
+      <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-3xl px-6 py-16 text-center">
-          <h2 className="text-3xl font-black tracking-tighter sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Ready to get started?
           </h2>
-          <p className="mx-auto mt-6 max-w-md text-lg font-medium text-black/70">
+          <p className="mx-auto mt-6 max-w-md text-lg text-gray-600">
             Takes 30 seconds to install. No credit card. No catch.
           </p>
           <div className="mt-10">
             <Link
               href="/#download"
-              className="group inline-flex items-center gap-3 border-8 border-black bg-white px-12 py-5 text-xl font-black uppercase tracking-tight text-black shadow-hard-xl transition-all hover:translate-y-[-4px] hover:shadow-[16px_16px_0px_#000]"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-white px-12 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
             >
               <Download className="h-7 w-7" />
               Install BOB Now
@@ -302,17 +292,17 @@ export default function HowItWorks() {
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t-4 border-black bg-black py-10">
+      <footer className="border-t border-gray-200 bg-gray-900 py-10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
           <Link href="/" className="flex items-baseline gap-3">
-            <span className="text-xl font-black tracking-tighter text-white">
+            <span className="text-xl font-bold tracking-tight text-white">
               BOB
             </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">
+            <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-gray-400">
               Stealth Pilot
             </span>
           </Link>
-          <div className="flex gap-8 text-[11px] font-bold uppercase tracking-[0.15em] text-white/50">
+          <div className="flex gap-8 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-400">
             <Link href="/how-it-works" className="transition-colors hover:text-white">
               How It Works
             </Link>
@@ -326,7 +316,7 @@ export default function HowItWorks() {
               Twitter
             </a>
           </div>
-          <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/30">
+          <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-gray-500">
             &copy; 2026 Baby Onboard
           </p>
         </div>

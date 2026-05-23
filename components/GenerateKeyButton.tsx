@@ -46,12 +46,12 @@ export function GenerateKeyButton() {
   };
 
   return (
-    <div className="mt-8 border-4 border-black bg-white p-6 shadow-hard transition-all hover:translate-y-[-4px] hover:shadow-[10px_10px_0px_#000]">
+    <div className="mt-8 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
       <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center border-4 border-black bg-black">
+        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gray-900">
           <Key className="h-6 w-6 text-white" />
         </div>
-        <h3 className="text-xl font-black uppercase tracking-tight">
+        <h3 className="text-xl font-bold text-gray-900">
           Access Key
         </h3>
       </div>
@@ -60,46 +60,46 @@ export function GenerateKeyButton() {
         <button
           onClick={generateToken}
           disabled={loading}
-          className="border-4 border-black bg-yellow-bright px-6 py-3 font-bold uppercase tracking-widest transition-all hover:bg-yellow-400 active:translate-y-1 disabled:opacity-50"
+          className="rounded-lg bg-gray-900 px-6 py-3 font-semibold uppercase tracking-widest text-white transition-all hover:bg-gray-800 active:translate-y-px disabled:opacity-50"
         >
           {loading ? "Generating..." : "Generate Access Key"}
         </button>
       ) : (
         <div className="space-y-4">
           <div className="flex items-center gap-2">
-            <div className="flex-1 bg-gray-100 p-4 border-2 border-black font-mono text-sm break-all flex items-center justify-between">
+            <div className="flex-1 rounded-lg bg-gray-50 p-4 border border-gray-200 font-mono text-sm break-all flex items-center justify-between">
               <span>{showKey ? token : token.replace(/./g, "•")}</span>
             </div>
             <button
               onClick={() => setShowKey(!showKey)}
-              className="p-4 border-2 border-black bg-white hover:bg-gray-100 transition-colors"
+              className="rounded-lg p-4 border border-gray-200 bg-white hover:bg-gray-50 transition-colors"
               title={showKey ? "Hide Key" : "Show Key"}
             >
               {showKey ? (
-                <EyeOff className="h-5 w-5" />
+                <EyeOff className="h-5 w-5 text-gray-600" />
               ) : (
-                <Eye className="h-5 w-5" />
+                <Eye className="h-5 w-5 text-gray-600" />
               )}
             </button>
             <button
               onClick={copyToClipboard}
-              className="p-4 border-2 border-black bg-yellow-bright hover:bg-yellow-400 transition-colors"
+              className="rounded-lg p-4 bg-gray-900 hover:bg-gray-800 transition-colors"
               title="Copy Key"
             >
               {copied ? (
-                <Check className="h-5 w-5" />
+                <Check className="h-5 w-5 text-white" />
               ) : (
-                <Copy className="h-5 w-5" />
+                <Copy className="h-5 w-5 text-white" />
               )}
             </button>
           </div>
-          <p className="text-sm font-bold text-black/60">
+          <p className="text-sm font-medium text-gray-500">
             Your key is safely stored in your browser.
           </p>
         </div>
       )}
 
-      {error && <p className="mt-2 text-sm text-red-600 font-bold">{error}</p>}
+      {error && <p className="mt-2 text-sm text-red-600 font-medium">{error}</p>}
     </div>
   );
 }
