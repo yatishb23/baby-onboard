@@ -13,6 +13,7 @@ import {
   Quote,
 } from "lucide-react";
 import { StatsCards } from "@/components/StatsCards";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 function StepCard({
   num,
@@ -230,6 +231,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* REVIEWS */}
+      <ReviewsSection />
 
       {/* FEATURES */}
       <section id="features" className="border-b border-gray-200">

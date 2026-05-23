@@ -15,19 +15,23 @@ function StatCard({ number, label }: { number: string; label: string }) {
 }
 
 export function StatsCards() {
-  const [stats, setStats] = useState({ visits: 0, downloads: 0 });
+  const [stats, setStats] = useState({ visits: 0, downloads: 0, rating: 4.9 });
 
   useEffect(() => {
     fetch("/api/stats")
       .then((r) => r.json())
-      .then((data) => setStats(data))
+      .then((data) => setStats((s) => ({ ...s, ...data })))
+      .catch(() => {});
+    fetch("/api/reviews")
+      .then((r) => r.json())
+      .then((data) => setStats((s) => ({ ...s, rating: data.averageRating })))
       .catch(() => {});
   }, []);
 
   return (
     <div className="grid gap-6 sm:grid-cols-3">
       <StatCard number={stats.visits.toLocaleString() + "+"} label="Site Visits" />
-      <StatCard number="4.9" label="Avg. Rating" />
+      <StatCard number={stats.rating.toFixed(1)} label="Avg. Rating" />
       <StatCard number={stats.downloads.toLocaleString()} label="Downloads" />
     </div>
   );
