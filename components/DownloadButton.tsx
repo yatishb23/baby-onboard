@@ -12,11 +12,8 @@ export function DownloadButton() {
   };
 
   return (
-    <button
-      onClick={handleClick}
-      className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
-    >
-      <Download className="h-7 w-7" />
+    <button onClick={handleClick} className="btn btn-primary">
+      <Download size={18} />
       Install BOB Now
     </button>
   );

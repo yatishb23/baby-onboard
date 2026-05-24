@@ -4,12 +4,9 @@ import { useEffect, useState } from "react";
 
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-gray-100 px-8 py-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-        {number}
-      </div>
-      <div className="my-2 h-px w-10 bg-gray-200" />
-      <div className="text-sm font-medium text-gray-500">{label}</div>
+    <div className="card" style={{ textAlign: "center" }}>
+      <div className="stat-number">{number}</div>
+      <div className="stat-label">{label}</div>
     </div>
   );
 }
@@ -29,7 +26,7 @@ export function StatsCards() {
   }, []);
 
   return (
-    <div className="grid gap-6 sm:grid-cols-3">
+    <div style={{ display: "grid", gap: 12, gridTemplateColumns: "1fr 1fr 1fr" }}>
       <StatCard number={stats.visits.toLocaleString() + "+"} label="Site Visits" />
       <StatCard number={stats.rating.toFixed(1)} label="Avg. Rating" />
       <StatCard number={stats.downloads.toLocaleString()} label="Downloads" />

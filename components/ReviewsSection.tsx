@@ -13,21 +13,19 @@ type Review = {
 
 function StarRating({ value, onChange }: { value: number; onChange?: (v: number) => void }) {
   return (
-    <div className="flex gap-1">
+    <div style={{ display: "flex", gap: 2 }}>
       {[1, 2, 3, 4, 5].map((star) => (
         <button
           key={star}
           type="button"
           disabled={!onChange}
           onClick={() => onChange?.(star)}
-          className={`h-5 w-5 ${onChange ? "cursor-pointer" : "cursor-default"}`}
+          style={{ width: 16, height: 16, background: "none", border: "none", cursor: onChange ? "pointer" : "default", padding: 0 }}
         >
           <Star
-            className={`h-full w-full ${
-              star <= value
-                ? "fill-yellow-400 text-yellow-400"
-                : "fill-gray-200 text-gray-200"
-            }`}
+            size={16}
+            fill={star <= value ? "var(--text-tertiary)" : "var(--border)"}
+            color={star <= value ? "var(--text-tertiary)" : "var(--border)"}
           />
         </button>
       ))}
@@ -84,83 +82,80 @@ export function ReviewsSection() {
   };
 
   return (
-    <section className="border-b border-gray-200 bg-gray-100">
-      <div className="mx-auto max-w-5xl px-6 py-16 lg:py-20">
-        <div className="mb-12 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
-          <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
-            Reviews
-          </h2>
-        </div>
+    <div className="content-section">
+      <div className="section-header">
+        <h2>Reviews</h2>
+      </div>
 
-        <div className="mb-12 flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-200 p-6">
-          <div className="text-5xl font-bold text-gray-900">{average.toFixed(1)}</div>
-          <div>
-            <StarRating value={Math.round(average)} />
-            <p className="mt-1 text-sm text-gray-500">{total} review{total !== 1 ? "s" : ""}</p>
-          </div>
-        </div>
-
-        <div className="mb-12 grid gap-4">
-          {reviews.length === 0 && (
-            <p className="text-center text-gray-400">No reviews yet. Be the first!</p>
-          )}
-          {reviews.map((review) => (
-            <div key={review.id} className="rounded-xl border border-gray-200 bg-gray-100 p-5 shadow-sm">
-              <div className="flex items-center justify-between">
-                <span className="font-semibold text-gray-900">{review.name}</span>
-                <StarRating value={review.rating} />
-              </div>
-              <div className="my-3 h-px w-full bg-gray-100" />
-              <p className="text-gray-600 leading-relaxed">{review.comment}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="rounded-xl border border-gray-200 bg-gray-200 p-6">
-          <h3 className="mb-4 text-lg font-bold text-gray-900">Leave a Review</h3>
-          {submitted && (
-            <p className="mb-4 rounded-lg bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
-              Review submitted! Thank you.
-            </p>
-          )}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Name</label>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                maxLength={255}
-                className="w-full rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-600"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Rating</label>
-              <StarRating value={rating} onChange={setRating} />
-            </div>
-            <div>
-              <label className="mb-1 block text-sm font-medium text-gray-700">Comment</label>
-              <textarea
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                required
-                rows={3}
-                className="w-full rounded-lg border border-gray-300 bg-gray-100 px-4 py-2 text-sm text-gray-900 outline-none focus:border-gray-600 resize-none"
-                placeholder="Share your experience..."
-              />
-            </div>
-            <button
-              type="submit"
-              disabled={submitting}
-              className="rounded-lg bg-zinc-200 px-6 py-2 text-sm font-semibold uppercase tracking-wider text-zinc-900 transition-all hover:bg-zinc-300 disabled:opacity-50"
-            >
-              {submitting ? "Submitting..." : "Submit Review"}
-            </button>
-          </form>
+      <div className="card" style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 16 }}>
+        <span style={{ fontSize: 28, fontWeight: 600 }}>{average.toFixed(1)}</span>
+        <div>
+          <StarRating value={Math.round(average)} />
+          <p style={{ fontSize: 13, color: "var(--text-tertiary)", margin: 0 }}>{total} review{total !== 1 ? "s" : ""}</p>
         </div>
       </div>
-    </section>
+
+      <div style={{ display: "grid", gap: 8, marginBottom: 24 }}>
+        {reviews.length === 0 && (
+          <p style={{ fontSize: 14, color: "var(--text-tertiary)", textAlign: "center" }}>No reviews yet. Be the first!</p>
+        )}
+        {reviews.map((review) => (
+          <div key={review.id} className="review-card">
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <span className="review-name">{review.name}</span>
+              <StarRating value={review.rating} />
+            </div>
+            <p className="review-comment">{review.comment}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="card">
+        <h3 style={{ fontSize: 15, fontWeight: 600, marginBottom: 16 }}>Leave a Review</h3>
+        {submitted && (
+          <p style={{ fontSize: 13, color: "var(--text-secondary)", marginBottom: 12 }}>
+            Review submitted! Thank you.
+          </p>
+        )}
+        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div>
+            <label className="form-label">Name</label>
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              maxLength={255}
+              className="form-input"
+              placeholder="Your name"
+            />
+          </div>
+          <div>
+            <label className="form-label">Rating</label>
+            <StarRating value={rating} onChange={setRating} />
+          </div>
+          <div>
+            <label className="form-label">Comment</label>
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              required
+              rows={3}
+              className="form-input"
+              placeholder="Share your experience..."
+              style={{ resize: "none" }}
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={submitting}
+            className="btn btn-primary"
+            style={{ alignSelf: "flex-start" }}
+          >
+            {submitting ? "Submitting..." : "Submit Review"}
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }

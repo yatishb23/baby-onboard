@@ -21,12 +21,8 @@ export function GenerateKeyButton() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch("/api/generate", {
-        method: "POST",
-      });
-      if (!res.ok) {
-        throw new Error("Failed to generate token");
-      }
+      const res = await fetch("/api/generate", { method: "POST" });
+      if (!res.ok) throw new Error("Failed to generate token");
       const data = await res.json();
       setToken(data.accessToken);
       localStorage.setItem("bob_access_key", data.accessToken);
@@ -46,60 +42,54 @@ export function GenerateKeyButton() {
   };
 
   return (
-    <div className="mt-8 rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
-          <Key className="h-6 w-6 text-white" />
-        </div>
-        <h3 className="text-xl font-bold text-gray-900">
-          Access Key
-        </h3>
+    <div className="card">
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+        <Key size={20} />
+        <h3 style={{ fontSize: 15, fontWeight: 600, margin: 0 }}>Access Key</h3>
       </div>
 
       {!token ? (
         <button
           onClick={generateToken}
           disabled={loading}
-          className="rounded-lg bg-zinc-200 px-6 py-3 font-semibold uppercase tracking-widest text-zinc-900 transition-all hover:bg-zinc-300 active:translate-y-px disabled:opacity-50"
+          className="btn btn-primary"
         >
           {loading ? "Generating..." : "Generate Access Key"}
         </button>
       ) : (
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <div className="flex-1 rounded-lg bg-gray-200 p-4 border border-gray-200 font-mono text-sm break-all flex items-center justify-between">
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <div style={{ display: "flex", gap: 8 }}>
+            <div className="form-input" style={{ display: "flex", alignItems: "center", fontFamily: "monospace", fontSize: 13, wordBreak: "break-all" }}>
               <span>{showKey ? token : token.replace(/./g, "•")}</span>
             </div>
             <button
               onClick={() => setShowKey(!showKey)}
-              className="rounded-lg p-4 border border-gray-200 bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="btn btn-ghost"
               title={showKey ? "Hide Key" : "Show Key"}
+              style={{ padding: "10px" }}
             >
-              {showKey ? (
-                <EyeOff className="h-5 w-5 text-gray-600" />
-              ) : (
-                <Eye className="h-5 w-5 text-gray-600" />
-              )}
+              {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
             </button>
             <button
               onClick={copyToClipboard}
-              className="rounded-lg p-4 bg-zinc-200 text-zinc-900 hover:bg-zinc-300 transition-colors"
+              className="btn btn-primary"
               title="Copy Key"
+              style={{ padding: "10px" }}
             >
-              {copied ? (
-                <Check className="h-5 w-5 text-zinc-900" />
-              ) : (
-                <Copy className="h-5 w-5 text-zinc-900" />
-              )}
+              {copied ? <Check size={16} /> : <Copy size={16} />}
             </button>
           </div>
-          <p className="text-sm font-medium text-gray-500">
+          <p style={{ fontSize: 13, color: "var(--text-tertiary)", margin: 0 }}>
             Your key is safely stored in your browser.
           </p>
         </div>
       )}
 
-      {error && <p className="mt-2 text-sm text-red-600 font-medium">{error}</p>}
+      {error && (
+        <p style={{ fontSize: 13, color: "var(--text-tertiary)", marginTop: 8 }}>
+          {error}
+        </p>
+      )}
     </div>
   );
 }
