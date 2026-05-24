@@ -5,12 +5,9 @@ import {
   Brain,
   Eye,
   Zap,
-  ChevronRight,
-  Check,
-  Users,
   ShieldCheck,
+  Users,
   DownloadCloud,
-  Quote,
 } from "lucide-react";
 import { StatsCards } from "@/components/StatsCards";
 import { ReviewsSection } from "@/components/ReviewsSection";
@@ -25,13 +22,12 @@ function StepCard({
   desc: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6">
       <div className="mb-3 inline-block rounded-lg bg-zinc-800 px-3 py-1 font-mono text-sm font-bold text-zinc-200">
         {num}
       </div>
-      <h3 className="text-xl font-bold text-gray-900">{title}</h3>
-      <div className="my-4 h-px w-full bg-gray-200" />
-      <p className="text-gray-600 leading-relaxed">{desc}</p>
+      <h3 className="text-lg font-bold text-gray-900">{title}</h3>
+      <p className="mt-3 text-gray-600 leading-relaxed">{desc}</p>
     </div>
   );
 }
@@ -46,73 +42,25 @@ function FeatureCard({
   desc: string;
 }) {
   return (
-    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6 shadow-sm transition-shadow hover:shadow-md">
-      <div className="mb-4 flex items-center gap-4">
-        <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
-          <Icon className="h-6 w-6 text-white" />
-        </div>
-        <div className="rounded-md bg-gray-100 px-2 py-1 text-[10px] font-semibold uppercase tracking-wider text-gray-600">
-          New
-        </div>
+    <div className="rounded-xl border border-gray-200 bg-gray-100 p-6">
+      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-zinc-800">
+        <Icon className="h-6 w-6 text-white" />
       </div>
       <h3 className="text-lg font-bold text-gray-900">{title}</h3>
-      <div className="my-4 h-px w-full bg-gray-200" />
-      <p className="text-gray-600 leading-relaxed">{desc}</p>
+      <p className="mt-3 text-gray-600 leading-relaxed">{desc}</p>
     </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* NAV */}
-      <header className="sticky top-0 z-50 border-b border-gray-200 bg-gray-100">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link href="/" className="flex items-baseline gap-3">
-            <span className="text-2xl font-bold tracking-tight text-gray-900">
-              BOB
-            </span>
-            <span className="hidden text-[10px] font-medium uppercase tracking-[0.25em] text-gray-400 sm:block">
-              Stealth Pilot
-            </span>
-          </Link>
-          <nav className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/how-it-works"
-              className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/features"
-              className="text-[11px] font-medium uppercase tracking-[0.15em] text-gray-500 transition-colors hover:text-gray-900"
-            >
-              User Manual
-            </Link>
-            <Link
-              href="/download"
-              className="rounded-lg bg-zinc-200 px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-zinc-900 transition-all hover:bg-zinc-300"
-            >
-              Download
-            </Link>
-          </nav>
-          <Link
-            href="/download"
-            className="rounded-lg border border-gray-300 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-gray-700 md:hidden"
-          >
-            Download
-          </Link>
-        </div>
-      </header>
-
+    <div className="bg-gray-50">
       {/* HERO */}
-      <section className="relative overflow-hidden border-b border-gray-200">
+      <section className="overflow-hidden border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
           <div className="grid items-center gap-12 lg:grid-cols-5">
-            {/* Left — Headline */}
-            <div className="relative lg:col-span-3">
-              <div className="absolute -left-3 -top-3 h-12 w-12 rounded-lg bg-gray-200" />
-              <h1 className="relative text-5xl font-bold leading-[0.95] tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
+            <div className="lg:col-span-3">
+              <h1 className="text-5xl font-bold leading-[0.95] tracking-tight text-gray-900 sm:text-6xl lg:text-7xl">
                 <span className="block">Your interview</span>
                 <span className="block font-serif italic font-normal text-6xl sm:text-7xl lg:text-8xl">
                   stealth
@@ -120,18 +68,15 @@ export default function Home() {
                 <span className="mt-1 block">co-pilot</span>
               </h1>
 
-              {/* Highlight block */}
-              <div className="my-8 inline-block rounded-xl bg-gray-100 px-6 py-3 shadow-sm">
-                <p className="max-w-md text-base font-medium text-gray-700 leading-snug">
-                  Real-time answers. Zero detection. BOB keeps you in the zone
-                  while feeding you the perfect responses.
-                </p>
-              </div>
+              <p className="my-8 max-w-md text-base font-medium text-gray-700 leading-snug">
+                Real-time answers. Zero detection. BOB keeps you in the zone
+                while feeding you the perfect responses.
+              </p>
 
-              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Link
                   href="/download"
-                  className="group inline-flex items-center justify-center gap-3 rounded-xl bg-zinc-200 px-10 py-4 text-lg font-bold uppercase tracking-wide text-zinc-900 shadow-sm transition-all hover:bg-zinc-300"
+                  className="group inline-flex items-center justify-center gap-3 rounded-xl bg-zinc-200 px-10 py-4 text-lg font-bold uppercase tracking-wide text-zinc-900 transition-all hover:bg-zinc-300"
                 >
                   <Download className="h-5 w-5" />
                   Download Now
@@ -139,18 +84,15 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/how-it-works"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-gray-100 px-8 py-4 font-medium uppercase tracking-wide text-gray-700 shadow-sm transition-all hover:bg-gray-200"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-300 bg-gray-100 px-8 py-4 font-medium uppercase tracking-wide text-gray-700 transition-all hover:bg-gray-200"
                 >
                   See How It Works
-                  <ChevronRight className="h-4 w-4" />
                 </Link>
               </div>
             </div>
 
-            {/* Right — Decorative */}
-            <div className="relative flex items-center justify-center lg:col-span-2">
-              <div className="absolute -right-4 top-0 h-24 w-24 rounded-lg bg-gray-200" />
-              <div className="relative rounded-2xl border border-gray-200 bg-gray-100 p-4 shadow-md">
+            <div className="flex items-center justify-center lg:col-span-2">
+              <div className="rounded-2xl border border-gray-200 bg-gray-100 p-4">
                 <div className="rounded-xl bg-zinc-950 px-6 py-8 text-center">
                   <div
                     className="font-serif italic text-5xl font-bold text-white"
@@ -168,7 +110,6 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="absolute -bottom-4 -left-4 h-12 w-12 rounded-lg bg-gray-200" />
             </div>
           </div>
         </div>
@@ -182,10 +123,10 @@ export default function Home() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section id="how-it-works" className="border-b border-gray-200">
+      <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-12 inline-block rounded-xl bg-zinc-200 px-6 py-3 shadow-sm">
-            <h2 className="text-2xl font-bold uppercase tracking-tight text-zinc-900 sm:text-3xl">
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900 sm:text-3xl">
               How It Works
             </h2>
           </div>
@@ -213,9 +154,9 @@ export default function Home() {
       <ReviewsSection />
 
       {/* FEATURES */}
-      <section id="features" className="border-b border-gray-200">
+      <section className="border-b border-gray-200">
         <div className="mx-auto max-w-7xl px-6 py-16 lg:py-20">
-          <div className="mb-12 inline-block rounded-xl border border-gray-200 bg-gray-100 px-6 py-3 shadow-sm">
+          <div className="mb-12">
             <h2 className="text-2xl font-bold uppercase tracking-tight text-gray-900 sm:text-3xl">
               Why BOB?
             </h2>
@@ -238,7 +179,6 @@ export default function Home() {
             />
           </div>
 
-          {/* Extra feature row */}
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             {[
               { icon: ShieldCheck, label: "100% Private" },
@@ -247,7 +187,7 @@ export default function Home() {
             ].map(({ icon: Icon, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-100 px-6 py-4 shadow-sm"
+                className="flex items-center gap-4 rounded-xl border border-gray-200 bg-gray-100 px-6 py-4"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800">
                   <Icon className="h-5 w-5 text-white" />
@@ -261,10 +201,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXPLORE MORE */}
+      {/* CTA */}
       <section className="border-b border-gray-200 bg-gray-100">
         <div className="mx-auto max-w-5xl px-6 py-16 text-center lg:py-20">
-          <div className="inline-block rounded-lg bg-gray-200 px-5 py-2 shadow-sm text-xs font-semibold uppercase tracking-widest mb-6">
+          <div className="mb-6 inline-block rounded-lg bg-gray-200 px-5 py-2 text-xs font-semibold uppercase tracking-widest">
             v2.0.1 Now Available
           </div>
 
@@ -282,7 +222,7 @@ export default function Home() {
           <div className="mt-12 flex justify-center">
             <Link
               href="/download"
-              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-14 py-5 text-xl font-bold tracking-tight text-gray-900 shadow-md transition-all hover:shadow-lg"
+              className="group inline-flex items-center gap-3 rounded-2xl border border-gray-300 bg-gray-200 px-14 py-5 text-xl font-bold tracking-tight text-gray-900 transition-all hover:shadow-lg"
             >
               <Download className="h-7 w-7" />
               Get BOB Now
@@ -290,43 +230,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* FOOTER */}
-      <footer className="border-t border-gray-200 bg-zinc-950 py-10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
-          <Link href="/" className="flex items-baseline gap-3">
-            <span className="text-xl font-bold tracking-tight text-white">
-              BOB
-            </span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.25em] text-gray-400">
-              Stealth Pilot
-            </span>
-          </Link>
-          <div className="flex gap-8 text-[11px] font-medium uppercase tracking-[0.15em] text-gray-400">
-            <Link
-              href="/how-it-works"
-              className="transition-colors hover:text-white"
-            >
-              How It Works
-            </Link>
-            <Link
-              href="/features"
-              className="transition-colors hover:text-white"
-            >
-              Features
-            </Link>
-            <a href="#" className="transition-colors hover:text-white">
-              Privacy
-            </a>
-            <a href="#" className="transition-colors hover:text-white">
-              Twitter
-            </a>
-          </div>
-          <p className="text-[10px] font-medium uppercase tracking-[0.15em] text-gray-500">
-            &copy; 2026 Baby Onboard
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }

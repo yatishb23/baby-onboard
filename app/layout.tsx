@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { VisitTracker } from "@/components/VisitTracker";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,9 +41,11 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
     >
       <body className="bg-gray-50 font-sans text-gray-900 antialiased">
-        <Analytics/>
+        <Analytics />
         <VisitTracker />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
