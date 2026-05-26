@@ -6,7 +6,7 @@ export function DownloadButton() {
   const handleClick = async () => {
     await fetch("/api/track/download", { method: "POST" });
     window.open(
-      "https://github.com/yatishb23/baby-onboard/releases/download/Pre-release/Bob.io-1.3.0-Setup.msi",
+      "https://github.com/yatishb23/baby-onboard/releases/download/Pre-release/Bob.io-1.3.0.Setup.exe",
       "_blank"
     );
   };
