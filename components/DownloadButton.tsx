@@ -5,10 +5,16 @@ import { Download } from "lucide-react";
 export function DownloadButton() {
   const handleClick = async () => {
     await fetch("/api/track/download", { method: "POST" });
-    window.open(
-      "https://github.com/yatishb23/baby-onboard/releases/download/Pre-release/Bob.io-1.3.0.Setup.exe",
-      "_blank"
-    );
+    try {
+      const res = await fetch("/api/latest-release");
+      const data = await res.json();
+      if (data.url) window.open(data.url, "_blank");
+    } catch {
+      window.open(
+        "https://github.com/yatishb23/baby-onboard/releases/latest",
+        "_blank"
+      );
+    }
   };
 
   return (
