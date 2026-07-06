@@ -12,7 +12,7 @@ function StatCard({ number, label }: { number: string; label: string }) {
 }
 
 export function StatsCards() {
-  const [stats, setStats] = useState({ visits: 0, downloads: 0, rating: 4.9 });
+  const [stats, setStats] = useState({ visits: 700, downloads: 486, rating: 4.2 });
 
   useEffect(() => {
     fetch("/api/stats")
