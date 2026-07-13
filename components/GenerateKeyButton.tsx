@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Key, Copy, Check, Eye, EyeOff } from "lucide-react";
+import { Key, Copy, Check, Eye, EyeOff, RefreshCw } from "lucide-react";
 
 export function GenerateKeyButton() {
   const [token, setToken] = useState<string | null>(null);
@@ -79,9 +79,20 @@ export function GenerateKeyButton() {
               {copied ? <Check size={16} /> : <Copy size={16} />}
             </button>
           </div>
-          <p style={{ fontSize: 13, color: "var(--text-tertiary)", margin: 0 }}>
-            Your key is safely stored in your browser.
-          </p>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+            <p style={{ fontSize: 13, color: "var(--text-tertiary)", margin: 0 }}>
+              Your key is safely stored in your browser.
+            </p>
+            <button
+              onClick={generateToken}
+              disabled={loading}
+              className="btn btn-ghost"
+              style={{ fontSize: 13, padding: "6px 12px", display: "flex", alignItems: "center", gap: 6 }}
+            >
+              <RefreshCw size={14} className={loading ? "animate-spin" : ""} />
+              {loading ? "Generating..." : "Generate New Key"}
+            </button>
+          </div>
         </div>
       )}
 
