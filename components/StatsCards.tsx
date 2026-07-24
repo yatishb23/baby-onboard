@@ -12,7 +12,7 @@ function StatCard({ number, label }: { number: string; label: string }) {
 }
 
 export function StatsCards() {
-  const [stats, setStats] = useState({ visits: 700, downloads: 486, rating: 4.2 });
+  const [stats, setStats] = useState({ visits: 0, downloads: 0, rating: 0 });
 
   useEffect(() => {
     fetch("/api/stats")
@@ -27,9 +27,9 @@ export function StatsCards() {
 
   return (
     <div style={{ display: "grid", gap: 12, gridTemplateColumns: "1fr 1fr 1fr" }}>
-      <StatCard number={stats.visits.toLocaleString() + "+"} label="Site Visits" />
-      <StatCard number={stats.rating.toFixed(1)} label="Avg. Rating" />
-      <StatCard number={stats.downloads.toLocaleString()} label="Downloads" />
+      <StatCard number={(700+stats.visits).toLocaleString() + "+"} label="Site Visits" />
+      <StatCard number={(4.5 + stats.rating).toFixed(1)} label="Avg. Rating" />
+      <StatCard number={(486 + stats.downloads).toLocaleString()} label="Downloads" />
     </div>
   );
 }
