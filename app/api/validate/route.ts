@@ -1,4 +1,12 @@
-// import { NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+
+export async function POST(req: Request) {
+  return NextResponse.json(
+    { error: "Validation endpoint not configured" },
+    { status: 503 },
+  );
+}
+
 // import { Pool } from "@neondatabase/serverless";
 
 // // Ensure you have NEON_DATABASE_URL in your environment variables
@@ -8,7 +16,7 @@
 //   try {
 //     const body = await req.json();
 //     const { token } = body;
-    
+
 //     if (!token) {
 //       return NextResponse.json({ error: "Token is required" }, { status: 400 });
 //     }
